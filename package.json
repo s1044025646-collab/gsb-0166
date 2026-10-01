@@ -1,0 +1,16 @@
+{
+  "name": "powder-diffraction-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kinematic powder-diffraction peak and systematic-extinction analysis backend (orthorhombic point-atom model).",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --no-warnings src/server.ts",
+    "stop": "node --no-warnings src/cli.ts stop",
+    "demo": "node --no-warnings src/demo.ts",
+    "test": "node --no-warnings --test --test-concurrency=1 test/physics.test.ts test/db.test.ts test/api.test.ts"
+  }
+}
