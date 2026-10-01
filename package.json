@@ -1,0 +1,26 @@
+{
+  "name": "pxrd-backend",
+  "version": "1.0.0",
+  "description": "Kinematic powder diffraction peak & systematic extinction analysis backend (orthorhombic point-atom model). API + CLI only.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.5.0" },
+  "bin": { "pxrd": "./dist/cli.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --experimental-sqlite --import tsx src/server.ts",
+    "start:bg": "powershell -ExecutionPolicy Bypass -File scripts/start-bg.ps1",
+    "stop": "powershell -ExecutionPolicy Bypass -File scripts/stop.ps1",
+    "dev": "node --experimental-sqlite src/server.ts",
+    "cli": "node --experimental-sqlite src/cli.ts",
+    "test": "node --experimental-sqlite --test --import tsx test/*.test.ts",
+    "demo": "node --experimental-sqlite scripts/demo.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.0"
+  }
+}
